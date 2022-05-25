@@ -30,17 +30,11 @@ let numb = document.querySelectorAll(".numb")
 let area = document.querySelectorAll(".label")
 
 let id;
-let numbValue;
 numb.forEach(n =>
     n.ondragstart = function () {
-        numbValue = n
-        console.log(n.childNodes);
-        console.log(n);
         id = this.id
         console.log(id);
     })
-
-
 
 area.forEach(a => {
     a.ondragover = function (ev) {
@@ -48,20 +42,24 @@ area.forEach(a => {
     }
     a.ondrop = function () {
         let numbId = document.getElementById(id)
-        // console.log(numbValue.childNodes.item(0))
-        if (id <= 4 || id == 0) {
-            if (this.id == 1) {
-                this.append(numbId)
-            }
-        } else if (id <= 8 || id == 4) {
-            if (this.id == 2) {
-                this.append(numbId)
-            }
+        this.append(numbId)
+        if (id <= 4 && this.id == "a1") {
+            numbId.classList.add("bg-primary", "py-2", "px-3")
+            numbId.classList.remove("bg-danger")
+            // this.append(numbId)
         }
-        else if (id == 12 || id >= 9) {
-            if (this.id == 3) {
-                this.append(numbId)
-            }
+        else if (id >= 5 && id <= 8 && this.id == "a2") {
+            numbId.classList.add("bg-primary", "py-2", "px-3")
+            numbId.classList.remove("bg-danger")
+            // this.append(numbId)
+        }
+        else if (id >= 9 && this.id == "a3") {
+            numbId.classList.add("bg-primary", "py-2", "px-3")
+            numbId.classList.remove("bg-danger")
+            // this.append(numbId)
+        }
+        else {
+            numbId.classList.add("bg-danger", "py-2", "px-3")
         }
     }
 })
