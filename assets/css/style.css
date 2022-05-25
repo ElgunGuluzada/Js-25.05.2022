@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.numbers {
+    background: #000;
+}
+
+.numbers p {
+    padding: 10px;
+    color: wheat;
+    background: rgb(112, 74, 74);
+    cursor: pointer;
+}
+
+.label {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    min-height: 50px;
+    background: yellow;
+}
